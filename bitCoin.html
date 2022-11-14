@@ -13,8 +13,11 @@
                         const currency = document.querySelector('#currency').value;
                         console.log(data);
                         const rate = data.bpi.USD.rate_float * currency;
-                        document.querySelector('#result').innerHTML = `1 bitcoin now is equivalent to ${rate.toFixed(2)} USD`;
+                        document.querySelector('#result').innerHTML = `${currency} bitcoin now is equivalent to ${rate.toFixed(2)} USD`;
                     
+                    })
+                    .catch(error =>{
+                        console.log('Error', error);
                     });    
                     
                     return false;
